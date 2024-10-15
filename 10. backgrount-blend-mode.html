@@ -19,3 +19,35 @@ body{
     background-size: cover;
     background-blend-mode:multiply;    
 }
+
+<!-- Multiple Backgrounds images: -->
+background-image: url(a.jpg),url(b.jpg);
+background-position: left top, right bottom;
+background-repeat: repeat, no-repeat;
+background-size: 50px 50px;
+
+<!-- Multiple Background colors: -->
+body
+{
+background: linear-gradient(orange,white,green,aqua);
+background: linear-gradient(to right, orange, white, green, aqua, red);
+background: linear-gradient(to bottom right, orange, white, green, aqua, red);
+background: linear-gradient(orange 30%,white 20%,green 30%,aqua 20%);
+}
+
+<!-- Index.html -->
+<head><link rel="stylesheet" href="./style.css"></head>
+<p>
+Janahita Training and Placements
+</p>
+
+<!-- Style.css -->
+p
+{
+border:10px solid;
+border-image:url(a.jpg) 30 round;
+}
+
+border-image:url(a.jpg) 30 stretch;
+border-image:url(a.jpg) 30% round;
+
