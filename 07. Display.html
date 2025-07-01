@@ -17,7 +17,18 @@ Some block elements:
 <html>
 <head>
 <title>Display</title>
-<link rel="stylesheet" href="./style.css">
+<style>
+    a{
+    display:block;
+    background-color: brown;
+    width: 5%;
+    padding: 3px;
+    margin-bottom: 10px; /* Adds space between lines */
+    }
+    a:hover{
+        background-color: yellowgreen;
+    }
+</style>
 </head>
 <body>
 <a href="https://www.google.com/">Google</a>
@@ -26,15 +37,3 @@ Some block elements:
 <a href="https://www.gmail.com/">Gmail</a>
 </body>
 </html>
-
-<!-- style.css -->
-a
-{
-text-decoration:none;
-display:inline-block;
-width:5%;
-}
-
-a:hover{
-background-color:yellow;
-}
