@@ -1,0 +1,379 @@
+# CSS Background
+
+The **background** properties are used to add colors and images behind an HTML element. CSS provides several background properties to control the appearance, position, size, repetition, and behavior of the background.
+
+---
+# 1. background-color
+The **background-color** property sets the background color of an element.
+
+### Syntax
+```css
+background-color: red;
+background-color: #00ff00;
+background-color: rgb(0, 128, 255);
+background-color: transparent;
+```
+
+### Example
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+    width:300px;
+    height:150px;
+    background-color:lightgreen;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    Background Color Example
+</div>
+
+</body>
+</html>
+```
+
+---
+# 2. background-image
+The **background-image** property adds one or more images as the background.
+
+### Syntax
+```css
+background-image: url("image.jpg");
+```
+
+### Example
+```css
+.box{
+    width:500px;
+    height:300px;
+    background-image:url("nature.jpg");
+}
+```
+
+# 3. background-repeat
+The **background-repeat** property specifies whether the background image repeats.
+
+### Values
+| Value | Description |
+|--------|-------------|
+| repeat | Repeats horizontally and vertically (Default) |
+| no-repeat | Shows the image only once |
+| repeat-x | Repeats only horizontally |
+| repeat-y | Repeats only vertically |
+| space | Repeats with equal spacing |
+| round | Repeats by resizing the image |
+
+### Example
+```css
+.box{
+    background-image:url("icon.png");
+    background-repeat:no-repeat;
+}
+```
+
+# 4. background-position
+The **background-position** property sets the starting position of the background image.
+
+### Common Values
+```css
+background-position:left;
+background-position:right;
+background-position:center;
+background-position:top;
+background-position:bottom;
+
+background-position:left top;
+background-position:right top;
+background-position:left bottom;
+background-position:right bottom;
+background-position:center center;
+
+background-position:20px 50px;
+background-position:50% 30%;
+```
+
+### Example
+```css
+.box{
+    background-image:url("logo.png");
+    background-repeat:no-repeat;
+    background-position:right top;
+}
+```
+
+# 5. background-attachment
+The **background-attachment** property specifies whether the background image scrolls with the page.
+
+### Values
+| Value | Description |
+|--------|-------------|
+| scroll | Default. Image scrolls with the page |
+| fixed | Image remains fixed while the page scrolls |
+| local | Image scrolls with the element's content |
+
+### Example
+```css
+body{
+    background-image:url("mountain.jpg");
+    background-attachment:fixed;
+}
+```
+
+# 6. background-size
+The **background-size** property specifies the size of the background image.
+
+### Values
+| Value | Description |
+|--------|-------------|
+| auto | Original image size (Default) |
+| cover | Covers the entire element. Image may be cropped. |
+| contain | Displays the entire image without cropping. Empty space may remain. |
+| 200px 100px | Custom width and height |
+| 50% | Percentage size |
+
+### Example
+```css
+.box{
+    background-image:url("nature.jpg");
+    background-size:cover;
+}
+```
+
+### Difference between cover and contain
+**cover**
+
+- Covers the entire element.
+- Image may be cropped.
+- No empty spaces.
+
+**contain**
+- Displays the complete image.
+- Image is not cropped.
+- Empty spaces may appear around the image.
+
+---
+
+# 7. background-origin
+The **background-origin** property specifies where the background image starts.
+
+> **Note:** This property works only with **background-image**.
+
+### Values
+| Value | Description |
+|--------|-------------|
+| border-box | Image starts from the border area (Border + Padding + Content) |
+| padding-box | Image starts from the padding area (Padding + Content) (Default) |
+| content-box | Image starts from the content area only |
+
+### Example
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+    width:500px;
+    height:250px;
+
+    border:10px solid red;
+    padding:30px;
+
+    background-image:url("icon.png");
+    background-repeat:no-repeat;
+
+    background-origin:padding-box;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+Background Origin Example
+</div>
+
+</body>
+</html>
+```
+
+### Understanding background-origin
+```
+border-box
++----------------------------+
+|          Border            |
+|   +--------------------+   |
+|   |      Padding       |   |
+|   |   +------------+   |   |
+|   |   |  Content   |   |   |
+|   |   +------------+   |   |
+|   +--------------------+   |
++----------------------------+
+
+Image starts from the border.
+padding-box
++----------------------------+
+|          Border            |
+|   +--------------------+   |
+|   |      Padding       |   |
+|   |   +------------+   |   |
+|   |   |  Content   |   |   |
+|   |   +------------+   |   |
+|   +--------------------+   |
++----------------------------+
+
+Image starts from the padding.
+content-box
++----------------------------+
+|          Border            |
+|   +--------------------+   |
+|   |      Padding       |   |
+|   |   +------------+   |   |
+|   |   |  Content   |   |   |
+|   |   +------------+   |   |
+|   +--------------------+   |
++----------------------------+
+
+Image starts only from the content.
+```
+
+# 8. background-clip
+The **background-clip** property specifies how far the background color extends.
+
+> **Note:** This property mainly affects **background-color**.
+### Values
+| Value | Description |
+|--------|-------------|
+| border-box | Color covers Border + Padding + Content (Default) |
+| padding-box | Color covers Padding + Content |
+| content-box | Color covers only the Content |
+
+### Example
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+    width:400px;
+    padding:30px;
+    border:15px dashed red;
+
+    background-color:skyblue;
+
+    background-clip:content-box;
+}
+</style>
+</head>
+<body>
+<div class="box">
+Background Clip Example
+</div>
+
+</body>
+</html>
+```
+
+# 9. background (Shorthand Property)
+The **background** property is a shorthand property used to set multiple background properties in a single declaration.
+
+### Syntax
+```css
+background:
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+/
+background-size
+background-origin
+background-clip;
+```
+
+### Example
+```css
+.box{
+    background:
+    lightblue
+    url("nature.jpg")
+    no-repeat
+    fixed
+    center center
+    /
+    cover
+    padding-box
+    border-box;
+}
+```
+
+### Important Rule
+When using **background-size** in the shorthand property, it **must be written after background-position** and separated using a **slash (/)**.
+
+✔ Correct
+```css
+background:url("image.jpg") center center/cover no-repeat;
+```
+
+✔ Correct
+```css
+background:url("image.jpg") 20px 30px/150px 100px no-repeat;
+```
+
+❌ Incorrect
+```css
+background:url("image.jpg") cover center;
+```
+
+# Complete Example (Using Most Background Properties)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+    width:600px;
+    height:350px;
+
+    border:10px solid red;
+    padding:30px;
+
+    background-color:lightyellow;
+    background-image:url("nature.jpg");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    background-attachment:scroll;
+    background-origin:padding-box;
+    background-clip:border-box;
+
+    color:black;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>CSS Background Example</h2>
+
+<p>
+This example demonstrates background-color, background-image,
+background-repeat, background-position, background-size,
+background-attachment, background-origin, and background-clip.
+</p>
+
+</div>
+
+</body>
+</html>
+```

@@ -1,0 +1,499 @@
+# CSS Border
+
+The **border** properties are used to add and customize borders around HTML elements. You can control the border's **color, style, width, and shape**.
+
+---
+
+# 1. border-color
+
+The **border-color** property specifies the color of the border.
+
+### Syntax
+
+```css
+border-color:red;
+border-color:blue;
+border-color:#00ff00;
+border-color:rgb(255,0,0);
+```
+
+### Individual Border Colors
+
+```css
+border-top-color:red;
+border-right-color:blue;
+border-bottom-color:green;
+border-left-color:orange;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+
+    width:250px;
+    padding:20px;
+
+    border-style:solid;
+    border-width:4px;
+
+    border-color:red;
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+Border Color Example
+</div>
+
+</body>
+</html>
+```
+
+---
+
+# 2. border-style
+
+The **border-style** property specifies the style of the border.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| none | No border |
+| solid | Solid line |
+| dotted | Dotted line |
+| dashed | Dashed line |
+| double | Double line |
+| groove | 3D grooved border |
+| ridge | 3D ridged border |
+| inset | 3D inset border |
+| outset | 3D outset border |
+
+### Individual Border Styles
+
+```css
+border-top-style:solid;
+border-right-style:dashed;
+border-bottom-style:dotted;
+border-left-style:double;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.solid{
+    border:4px solid red;
+}
+
+.dotted{
+    border:4px dotted blue;
+}
+
+.dashed{
+    border:4px dashed green;
+}
+
+.double{
+    border:6px double black;
+}
+
+</style>
+</head>
+<body>
+
+<p class="solid">Solid Border</p>
+
+<p class="dotted">Dotted Border</p>
+
+<p class="dashed">Dashed Border</p>
+
+<p class="double">Double Border</p>
+
+</body>
+</html>
+```
+
+---
+
+# 3. border-width
+
+The **border-width** property specifies the thickness of the border.
+
+### Syntax
+
+```css
+border-width:2px;
+border-width:5px;
+border-width:10px;
+```
+
+### Individual Border Widths
+
+```css
+border-top-width:2px;
+border-right-width:4px;
+border-bottom-width:6px;
+border-left-width:8px;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+
+    border-style:solid;
+
+    border-width:8px;
+
+    border-color:red;
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+Border Width Example
+</div>
+
+</body>
+</html>
+```
+
+---
+
+# 4. border (Shorthand Property)
+
+The **border** property is a shorthand property used to specify the border width, style, and color in one declaration.
+
+### Syntax
+
+```css
+border:width style color;
+```
+
+### Example
+
+```css
+border:4px dotted red;
+```
+
+**Equivalent to**
+
+```css
+border-width:4px;
+
+border-style:dotted;
+
+border-color:red;
+```
+
+---
+
+# 5. inset and outset Borders
+
+### inset
+
+Creates a border that makes the element appear pressed inward.
+
+```css
+border:8px inset gray;
+```
+
+### outset
+
+Creates a border that makes the element appear raised outward.
+
+```css
+border:8px outset gray;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.inset{
+
+    border:8px inset gray;
+
+    padding:20px;
+
+}
+
+.outset{
+
+    border:8px outset gray;
+
+    padding:20px;
+
+}
+
+</style>
+</head>
+<body>
+
+<p class="inset">Inset Border</p>
+
+<p class="outset">Outset Border</p>
+
+</body>
+</html>
+```
+
+---
+
+# 6. border-radius
+
+The **border-radius** property rounds the corners of an element.
+
+### Syntax
+
+```css
+border-radius:10px;
+border-radius:20px;
+border-radius:50px;
+```
+
+### Example
+
+```css
+.box{
+
+    border:4px solid red;
+
+    border-radius:20px;
+
+}
+```
+
+---
+
+# 7. Individual Corner Radius
+
+You can round each corner separately.
+
+```css
+border-top-left-radius:20px;
+
+border-top-right-radius:30px;
+
+border-bottom-left-radius:40px;
+
+border-bottom-right-radius:50px;
+```
+
+### Example
+
+```css
+.box{
+
+    border:4px solid blue;
+
+    border-bottom-left-radius:100px;
+
+}
+```
+
+---
+
+# 8. Different Radius for Each Corner
+
+You can specify all four corner radii.
+
+```css
+border-radius:100px 0px 100px 0px;
+```
+
+**Order**
+
+```
+Top Left
+Top Right
+Bottom Right
+Bottom Left
+```
+
+### Example
+
+```css
+.box{
+
+    border:4px solid red;
+
+    border-radius:100px 0px 100px 0px;
+
+}
+```
+
+---
+
+# 9. Elliptical Border Radius
+
+Use a slash (`/`) to specify **horizontal** and **vertical** radii separately.
+
+### Syntax
+
+```css
+border-radius:50px/100px;
+```
+
+### Example
+
+```css
+.box{
+
+    border:4px solid green;
+
+    border-radius:50px/100px;
+
+}
+```
+
+---
+
+# 10. Circular and Oval Shapes
+
+### Circle
+
+```css
+border-radius:50%;
+```
+
+> Works when **width = height**.
+
+### Oval
+
+```css
+border-radius:50%/100%;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.circle{
+
+    width:150px;
+
+    height:150px;
+
+    border:5px solid red;
+
+    border-radius:50%;
+
+}
+
+.oval{
+
+    width:250px;
+
+    height:150px;
+
+    border:5px solid blue;
+
+    border-radius:50%/100%;
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="circle"></div>
+
+<br>
+
+<div class="oval"></div>
+
+</body>
+</html>
+```
+
+---
+
+# Complete Example (Using Most Border Properties)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+
+    width:400px;
+
+    padding:20px;
+
+    border-top:5px solid red;
+
+    border-right:5px dashed blue;
+
+    border-bottom:5px dotted green;
+
+    border-left:5px double orange;
+
+    border-radius:30px;
+
+}
+
+img{
+
+    width:200px;
+
+    border:8px dotted red;
+
+    border-radius:20px;
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+This box demonstrates different border colors, styles, widths, and rounded corners.
+</div>
+
+<br>
+
+<img src="image.jpg" alt="Sample Image">
+
+</body>
+</html>
+```
+
+> **Note:** The HTML attribute `border="8px"` on the `<img>` tag is **obsolete** in HTML5. Always use CSS to apply borders:
+
+```css
+img{
+    border:8px dotted red;
+}
+```

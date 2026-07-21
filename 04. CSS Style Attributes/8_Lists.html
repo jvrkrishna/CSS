@@ -1,0 +1,349 @@
+# CSS Lists
+
+CSS provides **list properties** to customize the appearance of ordered (`<ol>`) and unordered (`<ul>`) lists, such as changing bullet styles, positions, and images.
+
+---
+
+# 1. list-style-type
+
+The **list-style-type** property specifies the type of marker (bullet or numbering) for a list.
+
+### Values for Unordered Lists (`<ul>`)
+
+| Value | Description |
+|--------|-------------|
+| disc | Filled circle (Default) |
+| circle | Hollow circle |
+| square | Square bullet |
+| none | No marker |
+
+### Values for Ordered Lists (`<ol>`)
+
+| Value | Description |
+|--------|-------------|
+| decimal | 1, 2, 3... (Default) |
+| upper-alpha | A, B, C... |
+| lower-alpha | a, b, c... |
+| upper-roman | I, II, III... |
+| lower-roman | i, ii, iii... |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+ul{
+
+    list-style-type:square;
+
+}
+
+ol{
+
+    list-style-type:upper-roman;
+
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>JavaScript</li>
+
+</ul>
+
+<ol>
+
+<li>Java</li>
+
+<li>Python</li>
+
+<li>C++</li>
+
+</ol>
+
+</body>
+</html>
+```
+
+---
+
+# 2. list-style-position
+
+The **list-style-position** property specifies the position of the list marker.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| outside | Marker appears outside the content (Default) |
+| inside | Marker appears inside the content |
+
+### Example
+
+```css
+ul{
+
+    list-style-position:inside;
+
+}
+```
+
+---
+
+# 3. list-style-image
+
+The **list-style-image** property uses an image as the list marker.
+
+### Syntax
+
+```css
+list-style-image:url("star.png");
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+ul{
+
+    list-style-image:url("icon.png");
+
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>JavaScript</li>
+
+</ul>
+
+</body>
+</html>
+```
+
+---
+
+# 4. marker-offset
+
+The **marker-offset** property specifies the distance between the list marker and the text.
+
+### Syntax
+
+```css
+marker-offset:25px;
+
+marker-offset:20cm;
+```
+
+> **Note:** `marker-offset` is an old CSS property and is **not supported by modern browsers**. To control the spacing between the marker and the text, use **padding**, **margin**, or the `::marker` pseudo-element instead.
+
+### Example (Old Syntax)
+
+```css
+ul{
+
+    marker-offset:25px;
+
+}
+```
+
+### Modern Alternative
+
+```css
+ul{
+
+    padding-left:40px;
+
+}
+```
+
+---
+
+# 5. list-style (Shorthand Property)
+
+The **list-style** property is a shorthand property used to specify multiple list properties in a single declaration.
+
+### Syntax
+
+```css
+list-style:
+list-style-type
+list-style-position
+list-style-image;
+```
+
+### Example
+
+```css
+ul{
+
+    list-style:square inside;
+
+}
+```
+
+Equivalent to
+
+```css
+ul{
+
+    list-style-type:square;
+
+    list-style-position:inside;
+
+}
+```
+
+---
+
+# 6. resize
+
+The **resize** property specifies whether an element can be resized by the user.
+
+> **Note:** The `resize` property works only on elements whose `overflow` property is not `visible` (for example, `<textarea>` or `<div>` with `overflow:auto`).
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| none | Default. Resizing is disabled |
+| horizontal | Resize only horizontally |
+| vertical | Resize only vertically |
+| both | Resize both horizontally and vertically |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+
+    width:250px;
+
+    height:150px;
+
+    border:2px solid red;
+
+    overflow:auto;
+
+    resize:both;
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+
+You can resize this box by dragging its bottom-right corner.
+
+</div>
+
+</body>
+</html>
+```
+
+---
+
+# Complete Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+ul{
+
+    list-style-type:square;
+
+    list-style-position:inside;
+
+}
+
+ol{
+
+    list-style-type:upper-alpha;
+
+}
+
+.box{
+
+    width:300px;
+
+    height:150px;
+
+    border:3px solid blue;
+
+    overflow:auto;
+
+    resize:both;
+
+    padding:10px;
+
+}
+
+</style>
+</head>
+<body>
+
+<h3>Unordered List</h3>
+
+<ul>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>JavaScript</li>
+
+</ul>
+
+<h3>Ordered List</h3>
+
+<ol>
+
+<li>Java</li>
+
+<li>Python</li>
+
+<li>React</li>
+
+</ol>
+
+<h3>Resizable Box</h3>
+
+<div class="box">
+
+Drag the bottom-right corner to resize this box.
+
+</div>
+
+</body>
+</html>
+```

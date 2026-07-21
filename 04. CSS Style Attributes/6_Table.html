@@ -1,0 +1,413 @@
+# CSS Tables
+
+CSS provides several properties to control the appearance of HTML tables, including borders, spacing, captions, and empty cells.
+
+---
+
+# 1. caption-side
+
+The **caption-side** property specifies the position of the table caption.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| top | Displays the caption above the table (Default) |
+| bottom | Displays the caption below the table |
+
+> **Note:** Although some browsers may support `left` and `right`, the standard CSS values are **top** and **bottom**.
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table{
+
+    border-collapse:collapse;
+
+}
+
+caption{
+
+    caption-side:bottom;
+
+    font-weight:bold;
+
+}
+
+table,th,td{
+
+    border:2px solid black;
+
+    padding:10px;
+
+}
+
+</style>
+</head>
+<body>
+
+<table>
+
+<caption>Student Details</caption>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Course</th>
+
+</tr>
+
+<tr>
+
+<td>101</td>
+
+<td>Rahul</td>
+
+<td>Java</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
+```
+
+---
+
+# 2. border-collapse
+
+The **border-collapse** property specifies whether table borders should be collapsed into a single border or separated.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| collapse | Adjacent borders become one border |
+| separate | Borders remain separate (Default) |
+
+### Example
+
+```css
+table{
+
+    border-collapse:collapse;
+
+}
+```
+
+```css
+table{
+
+    border-collapse:separate;
+
+}
+```
+
+---
+
+# 3. border-spacing
+
+The **border-spacing** property specifies the space between adjacent table cells.
+
+> **Note:** This property works only when `border-collapse: separate`.
+
+### Syntax
+
+```css
+border-spacing:5px;
+
+border-spacing:10px;
+
+border-spacing:10px 20px;
+```
+
+### Example
+
+```css
+table{
+
+    border-collapse:separate;
+
+    border-spacing:15px;
+
+}
+```
+
+---
+
+# 4. empty-cells
+
+The **empty-cells** property specifies whether borders and backgrounds should be shown for empty table cells.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| show | Displays empty cells (Default) |
+| hide | Hides empty cells |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table{
+
+    border-collapse:separate;
+
+    empty-cells:hide;
+
+}
+
+table,th,td{
+
+    border:2px solid black;
+
+    padding:15px;
+
+}
+
+</style>
+</head>
+<body>
+
+<table>
+
+<tr>
+
+<th>Name</th>
+
+<th>Age</th>
+
+</tr>
+
+<tr>
+
+<td>Ravi</td>
+
+<td></td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
+```
+
+---
+
+# 5. border-color
+
+The **border-color** property specifies the color of the table border.
+
+### Syntax
+
+```css
+border-color:red;
+
+border-color:blue;
+
+border-color:green;
+```
+
+### Example
+
+```css
+table,th,td{
+
+    border:2px solid;
+
+    border-color:red;
+
+}
+```
+
+---
+
+# 6. border-style
+
+The **border-style** property specifies the style of the table border.
+
+### Common Values
+
+| Value | Description |
+|--------|-------------|
+| solid | Solid border |
+| dotted | Dotted border |
+| dashed | Dashed border |
+| double | Double border |
+| groove | 3D groove border |
+| ridge | 3D ridge border |
+
+### Example
+
+```css
+table,th,td{
+
+    border-style:dotted;
+
+}
+```
+
+---
+
+# 7. border-width
+
+The **border-width** property specifies the thickness of the border.
+
+### Syntax
+
+```css
+border-width:2px;
+
+border-width:4px;
+
+border-width:8px;
+```
+
+### Example
+
+```css
+table,th,td{
+
+    border-style:solid;
+
+    border-width:4px;
+
+}
+```
+
+---
+
+# 8. border-radius
+
+The **border-radius** property rounds the corners of the table.
+
+### Syntax
+
+```css
+border-radius:4px;
+
+border-radius:10px;
+
+border-radius:20px;
+```
+
+### Example
+
+```css
+table{
+
+    border:3px solid blue;
+
+    border-radius:10px;
+
+}
+```
+
+> **Note:** `border-radius` works best with `border-collapse: separate`.
+
+---
+
+# Complete Example (Using Most Table Properties)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table{
+
+    width:500px;
+
+    border-collapse:separate;
+
+    border-spacing:10px;
+
+    border:4px dotted red;
+
+    border-radius:10px;
+
+    empty-cells:show;
+
+}
+
+caption{
+
+    caption-side:top;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+}
+
+th,td{
+
+    border:2px solid blue;
+
+    padding:10px;
+
+    text-align:center;
+
+}
+
+</style>
+</head>
+<body>
+
+<table>
+
+<caption>Student Details</caption>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Course</th>
+
+</tr>
+
+<tr>
+
+<td>101</td>
+
+<td>Rahul</td>
+
+<td>Java</td>
+
+</tr>
+
+<tr>
+
+<td>102</td>
+
+<td></td>
+
+<td>Python</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
+```

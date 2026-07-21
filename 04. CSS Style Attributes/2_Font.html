@@ -1,0 +1,392 @@
+# CSS Font
+
+The **font** properties are used to change the appearance of text, such as its family, size, style, weight, color, and variant.
+
+---
+
+# 1. font-family
+
+The **font-family** property specifies the font (typeface) of the text.
+
+### Syntax
+
+```css
+font-family: Arial;
+font-family: "Times New Roman";
+font-family: Verdana, Geneva, sans-serif;
+font-family: Georgia, serif;
+```
+
+### Common Font Families
+
+| Font Family | Type |
+|-------------|------|
+| Arial | Sans-serif |
+| Verdana | Sans-serif |
+| Tahoma | Sans-serif |
+| Times New Roman | Serif |
+| Georgia | Serif |
+| Courier New | Monospace |
+| Algerian | Decorative |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+p{
+    font-family: Arial;
+}
+
+</style>
+</head>
+<body>
+
+<p>This text uses the Arial font.</p>
+
+</body>
+</html>
+```
+
+---
+
+# 2. font-style
+
+The **font-style** property specifies the style of the text.
+
+> **Note:** `bold` is **not** a valid value for `font-style`. Use `font-weight` for bold text.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| normal | Default text |
+| italic | Italic text |
+| oblique | Slanted text |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.normal{
+    font-style:normal;
+}
+
+.italic{
+    font-style:italic;
+}
+
+.oblique{
+    font-style:oblique;
+}
+
+</style>
+</head>
+<body>
+
+<p class="normal">Normal Text</p>
+
+<p class="italic">Italic Text</p>
+
+<p class="oblique">Oblique Text</p>
+
+</body>
+</html>
+```
+
+---
+
+# 3. font-variant
+
+The **font-variant** property displays lowercase letters as smaller uppercase letters.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| normal | Default text |
+| small-caps | Displays lowercase letters as small uppercase letters |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+p{
+    font-variant:small-caps;
+}
+
+</style>
+</head>
+<body>
+
+<p>Welcome to CSS Font Properties</p>
+
+</body>
+</html>
+```
+
+**Output**
+
+```
+WELCOME TO CSS FONT PROPERTIES
+```
+
+(The lowercase letters appear as smaller capital letters.)
+
+---
+
+# 4. font-weight
+
+The **font-weight** property specifies the thickness (boldness) of text.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| normal | Default thickness (400) |
+| bold | Bold text (700) |
+| bolder | Bolder than parent |
+| lighter | Lighter than parent |
+| 100 | Thin |
+| 200 | Extra Light |
+| 300 | Light |
+| 400 | Normal |
+| 500 | Medium |
+| 600 | Semi Bold |
+| 700 | Bold |
+| 800 | Extra Bold |
+| 900 | Black |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.w100{
+    font-weight:100;
+}
+
+.w400{
+    font-weight:400;
+}
+
+.w700{
+    font-weight:700;
+}
+
+.w900{
+    font-weight:900;
+}
+
+</style>
+</head>
+<body>
+
+<p class="w100">Thin Text</p>
+
+<p class="w400">Normal Text</p>
+
+<p class="w700">Bold Text</p>
+
+<p class="w900">Extra Bold Text</p>
+
+</body>
+</html>
+```
+
+---
+
+# 5. font-size
+
+The **font-size** property specifies the size of the text.
+
+### Values
+
+```css
+font-size:20px;
+font-size:30px;
+font-size:150%;
+font-size:2em;
+font-size:small;
+font-size:large;
+font-size:x-small;
+font-size:x-large;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.small{
+    font-size:14px;
+}
+
+.medium{
+    font-size:24px;
+}
+
+.large{
+    font-size:40px;
+}
+
+</style>
+</head>
+<body>
+
+<p class="small">Small Text</p>
+
+<p class="medium">Medium Text</p>
+
+<p class="large">Large Text</p>
+
+</body>
+</html>
+```
+
+---
+
+# 6. color
+
+The **color** property specifies the text color.
+
+### Syntax
+
+```css
+color:red;
+color:blue;
+color:#ff0000;
+color:rgb(255,0,0);
+color:hsl(0,100%,50%);
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.red{
+    color:red;
+}
+
+.green{
+    color:green;
+}
+
+.blue{
+    color:blue;
+}
+
+</style>
+</head>
+<body>
+
+<p class="red">Red Text</p>
+
+<p class="green">Green Text</p>
+
+<p class="blue">Blue Text</p>
+
+</body>
+</html>
+```
+
+---
+
+# 7. font (Shorthand Property)
+
+The **font** property is a shorthand property used to set multiple font properties in a single declaration.
+
+### Syntax
+
+```css
+font:
+font-style
+font-variant
+font-weight
+font-size/line-height
+font-family;
+```
+
+### Example
+
+```css
+p{
+    font:italic small-caps bold 24px/30px Arial;
+}
+```
+
+**Equivalent to:**
+
+```css
+p{
+    font-style:italic;
+    font-variant:small-caps;
+    font-weight:bold;
+    font-size:24px;
+    line-height:30px;
+    font-family:Arial;
+}
+```
+
+---
+
+# Complete Example (Using Most Font Properties)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+
+    font-family:Georgia, serif;
+    font-style:italic;
+    font-variant:small-caps;
+    font-weight:bold;
+    font-size:28px;
+    color:darkblue;
+
+    border:2px solid black;
+    padding:20px;
+    width:500px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+Welcome to CSS Font Properties
+
+<p>
+This example demonstrates font-family, font-style,
+font-variant, font-weight, font-size, and color.
+</p>
+
+</div>
+
+</body>
+</html>
+```

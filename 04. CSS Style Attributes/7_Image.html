@@ -1,0 +1,272 @@
+# CSS Image
+
+CSS can be used to style images by adding **borders**, **rounded corners**, **hover effects**, shadows, and controlling their size.
+
+---
+
+# 1. border
+
+The **border** property adds a border around an image.
+
+### Syntax
+
+```css
+border:4px solid red;
+
+border:5px dashed blue;
+
+border:3px dotted green;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+img{
+
+    border:5px dashed red;
+
+}
+
+</style>
+</head>
+<body>
+
+<img src="image.jpg" alt="Image">
+
+</body>
+</html>
+```
+
+---
+
+# 2. border-color
+
+The **border-color** property specifies the color of the image border.
+
+### Syntax
+
+```css
+border-color:red;
+
+border-color:blue;
+
+border-color:green;
+```
+
+### Example
+
+```css
+img{
+
+    border-style:solid;
+
+    border-width:5px;
+
+    border-color:red;
+
+}
+```
+
+---
+
+# 3. border-style
+
+The **border-style** property specifies the style of the image border.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| solid | Solid border |
+| dotted | Dotted border |
+| dashed | Dashed border |
+| double | Double border |
+| groove | 3D groove border |
+| ridge | 3D ridge border |
+| inset | 3D inset border |
+| outset | 3D outset border |
+
+### Example
+
+```css
+img{
+
+    border-style:dotted;
+
+    border-width:5px;
+
+    border-color:red;
+
+}
+```
+
+---
+
+# 4. border-width
+
+The **border-width** property specifies the thickness of the border.
+
+### Syntax
+
+```css
+border-width:2px;
+
+border-width:5px;
+
+border-width:10px;
+```
+
+### Example
+
+```css
+img{
+
+    border-style:solid;
+
+    border-width:8px;
+
+    border-color:blue;
+
+}
+```
+
+---
+
+# 5. border-radius
+
+The **border-radius** property rounds the corners of an image.
+
+### Syntax
+
+```css
+border-radius:4px;
+
+border-radius:20px;
+
+border-radius:50%;
+```
+
+### Example
+
+```css
+img{
+
+    border:4px solid red;
+
+    border-radius:20px;
+
+}
+```
+
+### Circle Image
+
+```css
+img{
+
+    width:200px;
+
+    height:200px;
+
+    border-radius:50%;
+
+}
+```
+
+> **Note:** `border-radius:50%` creates a perfect circle only when the image has equal width and height.
+
+---
+
+# 6. :hover
+
+The **:hover** pseudo-class applies styles when the mouse pointer is placed over the image.
+
+### Example 1 (Resize Image)
+
+```css
+img:hover{
+
+    width:500px;
+
+    height:500px;
+
+}
+```
+
+### Example 2 (Border Color Change)
+
+```css
+img:hover{
+
+    border-color:blue;
+
+}
+```
+
+### Example 3 (Rounded Corners)
+
+```css
+img:hover{
+
+    border-radius:50%;
+
+}
+```
+
+---
+
+# 7. Complete Example
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<img src="image.jpg" alt="Nature Image">
+
+</body>
+</html>
+```
+
+### style.css
+
+```css
+img{
+
+    width:250px;
+
+    height:250px;
+
+    border:5px dashed red;
+
+    border-radius:10px;
+
+    transition:0.5s;
+
+}
+
+img:hover{
+
+    width:350px;
+
+    height:350px;
+
+    border-color:blue;
+
+    border-radius:50%;
+
+}
+```
+
+> **Note:** The `transition` property is optional, but it makes the hover effect smooth instead of changing instantly.

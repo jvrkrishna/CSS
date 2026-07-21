@@ -1,0 +1,208 @@
+# CSS Links (Pseudo Classes)
+
+CSS provides **link pseudo-classes** to style hyperlinks (`<a>` tag) based on their different states, such as normal, visited, hovered, and active.
+
+---
+
+# Link States
+
+There are **four** link states in CSS:
+
+| Pseudo Class | Description |
+|--------------|-------------|
+| `:link` | Styles a normal (unvisited) link |
+| `:visited` | Styles a link after it has been visited |
+| `:hover` | Styles a link when the mouse pointer is placed over it |
+| `:active` | Styles a link while it is being clicked |
+
+---
+
+# 1. :link
+
+The **:link** pseudo-class styles a hyperlink that has **not been visited**.
+
+### Syntax
+
+```css
+a:link{
+    color:red;
+}
+```
+
+### Example
+
+```html
+<a href="https://www.google.com">Google</a>
+```
+
+```css
+a:link{
+    color:red;
+}
+```
+
+---
+
+# 2. :visited
+
+The **:visited** pseudo-class styles a hyperlink that the user has **already visited**.
+
+### Syntax
+
+```css
+a:visited{
+    color:purple;
+}
+```
+
+### Example
+
+```css
+a:visited{
+    color:green;
+}
+```
+
+---
+
+# 3. :hover
+
+The **:hover** pseudo-class styles an element when the **mouse pointer is placed over it**.
+
+### Syntax
+
+```css
+a:hover{
+    color:blue;
+}
+```
+
+### Example
+
+```css
+a:hover{
+    color:maroon;
+    font-size:20px;
+    text-decoration:underline;
+}
+```
+
+---
+
+# 4. :active
+
+The **:active** pseudo-class styles a hyperlink **while it is being clicked**.
+
+### Syntax
+
+```css
+a:active{
+    color:red;
+}
+```
+
+### Example
+
+```css
+a:active{
+    color:blue;
+}
+```
+
+---
+
+# Order of Link Pseudo-Classes
+
+The link pseudo-classes should always be written in the following order:
+
+```css
+a:link
+a:visited
+a:hover
+a:active
+```
+
+### Easy Way to Remember
+
+**L V H A**
+
+**L**ink → **V**isited → **H**over → **A**ctive
+
+If the order is incorrect, some styles may not work as expected.
+
+---
+
+# Complete Example
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<a href="https://www.janahitaplacements.com">
+    Click Here
+</a>
+
+</body>
+</html>
+```
+
+### style.css
+
+```css
+a{
+
+    background-color:yellow;
+
+    text-decoration:none;
+
+    padding:10px 20px;
+
+}
+
+a:link{
+
+    color:red;
+
+}
+
+a:visited{
+
+    color:black;
+
+}
+
+a:hover{
+
+    color:maroon;
+
+    font-size:22px;
+
+    background-color:lightgreen;
+
+}
+
+a:active{
+
+    color:blue;
+
+}
+```
+
+---
+
+# Complete Output Explanation
+
+| State | Result |
+|--------|--------|
+| Normal Link (`:link`) | Red text with yellow background |
+| Visited (`:visited`) | Black text |
+| Mouse Over (`:hover`) | Maroon text, larger font, light green background |
+| Mouse Click (`:active`) | Blue text while clicking |

@@ -1,0 +1,507 @@
+# CSS Text
+
+The **text** properties are used to control the appearance, alignment, spacing, direction, decoration, and shadow of text.
+
+---
+
+# 1. direction
+
+The **direction** property specifies the writing direction of text.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| ltr | Left to Right (Default) |
+| rtl | Right to Left |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.ltr{
+    direction:ltr;
+}
+
+.rtl{
+    direction:rtl;
+}
+
+</style>
+</head>
+<body>
+
+<p class="ltr">This text is displayed from Left to Right.</p>
+
+<p class="rtl">This text is displayed from Right to Left.</p>
+
+</body>
+</html>
+```
+
+---
+
+# 2. letter-spacing
+
+The **letter-spacing** property specifies the space between characters.
+
+### Syntax
+
+```css
+letter-spacing:2px;
+letter-spacing:5px;
+letter-spacing:-1px;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.normal{
+    letter-spacing:normal;
+}
+
+.space{
+    letter-spacing:5px;
+}
+
+.tight{
+    letter-spacing:-1px;
+}
+
+</style>
+</head>
+<body>
+
+<p class="normal">CSS Text Properties</p>
+
+<p class="space">CSS Text Properties</p>
+
+<p class="tight">CSS Text Properties</p>
+
+</body>
+</html>
+```
+
+---
+
+# 3. word-spacing
+
+The **word-spacing** property specifies the space between words.
+
+### Syntax
+
+```css
+word-spacing:5px;
+word-spacing:15px;
+word-spacing:-2px;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.normal{
+    word-spacing:normal;
+}
+
+.large{
+    word-spacing:20px;
+}
+
+</style>
+</head>
+<body>
+
+<p class="normal">
+Welcome to CSS Text Properties.
+</p>
+
+<p class="large">
+Welcome to CSS Text Properties.
+</p>
+
+</body>
+</html>
+```
+
+---
+
+# 4. text-indent
+
+The **text-indent** property specifies the indentation of the first line of a paragraph.
+
+### Syntax
+
+```css
+text-indent:30px;
+text-indent:50px;
+text-indent:10%;
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+p{
+    text-indent:50px;
+}
+
+</style>
+</head>
+<body>
+
+<p>
+CSS is a stylesheet language used to describe the presentation of HTML documents.
+The first line of this paragraph is indented by 50 pixels.
+</p>
+
+</body>
+</html>
+```
+
+---
+
+# 5. text-align
+
+The **text-align** property specifies the horizontal alignment of text.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| left | Aligns text to the left |
+| right | Aligns text to the right |
+| center | Centers the text |
+| justify | Stretches text so each line has equal width |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.left{
+    text-align:left;
+}
+
+.right{
+    text-align:right;
+}
+
+.center{
+    text-align:center;
+}
+
+.justify{
+    text-align:justify;
+}
+
+</style>
+</head>
+<body>
+
+<p class="left">Left Aligned Text</p>
+
+<p class="right">Right Aligned Text</p>
+
+<p class="center">Center Aligned Text</p>
+
+<p class="justify">
+CSS makes web pages attractive by controlling colors, layouts, spacing,
+fonts, and many other visual styles.
+</p>
+
+</body>
+</html>
+```
+
+---
+
+# 6. text-decoration
+
+The **text-decoration** property adds or removes decoration lines from text.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| underline | Draws a line below the text |
+| overline | Draws a line above the text |
+| line-through | Draws a line through the text |
+| none | Removes decoration |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.underline{
+    text-decoration:underline;
+}
+
+.overline{
+    text-decoration:overline;
+}
+
+.line{
+    text-decoration:line-through;
+}
+
+.none{
+    text-decoration:none;
+}
+
+</style>
+</head>
+<body>
+
+<p class="underline">Underline Text</p>
+
+<p class="overline">Overline Text</p>
+
+<p class="line">Line Through Text</p>
+
+<a href="#" class="none">Link Without Underline</a>
+
+</body>
+</html>
+```
+
+---
+
+# 7. text-transform
+
+The **text-transform** property changes the capitalization of text.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| uppercase | Converts all letters to uppercase |
+| lowercase | Converts all letters to lowercase |
+| capitalize | Converts the first letter of each word to uppercase |
+| none | No transformation |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.upper{
+    text-transform:uppercase;
+}
+
+.lower{
+    text-transform:lowercase;
+}
+
+.cap{
+    text-transform:capitalize;
+}
+
+</style>
+</head>
+<body>
+
+<p class="upper">welcome to css</p>
+
+<p class="lower">WELCOME TO CSS</p>
+
+<p class="cap">welcome to css properties</p>
+
+</body>
+</html>
+```
+
+---
+
+# 8. white-space
+
+The **white-space** property specifies how white spaces and line breaks inside text are handled.
+
+### Values
+
+| Value | Description |
+|--------|-------------|
+| normal | Default. Multiple spaces are collapsed into one |
+| nowrap | Text stays on one line |
+| pre | Preserves spaces and line breaks exactly as written |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.normal{
+    white-space:normal;
+}
+
+.nowrap{
+    white-space:nowrap;
+}
+
+.pre{
+    white-space:pre;
+}
+
+</style>
+</head>
+<body>
+
+<p class="normal">
+CSS    Text    Properties
+Multiple spaces become one.
+</p>
+
+<p class="nowrap">
+This is a very long sentence that will remain on one line without wrapping.
+</p>
+
+<p class="pre">
+CSS     Text
+Properties
+
+Spaces and line breaks
+are preserved.
+</p>
+
+</body>
+</html>
+```
+
+---
+
+# 9. text-shadow
+
+The **text-shadow** property adds shadow effects to text.
+
+### Syntax
+
+```css
+text-shadow:2px 3px 4px blue;
+```
+
+**Explanation**
+
+```
+2px   → Horizontal Shadow
+3px   → Vertical Shadow
+4px   → Blur Radius
+blue  → Shadow Color
+```
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h1{
+
+    color:red;
+
+    text-shadow:2px 3px 4px blue;
+
+}
+
+</style>
+</head>
+<body>
+
+<h1>CSS Text Shadow</h1>
+
+</body>
+</html>
+```
+
+---
+
+# 10. text (Complete Example)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box{
+
+    width:600px;
+
+    border:2px solid black;
+
+    padding:20px;
+
+    direction:ltr;
+
+    letter-spacing:2px;
+
+    word-spacing:8px;
+
+    text-indent:40px;
+
+    text-align:justify;
+
+    text-transform:capitalize;
+
+    white-space:normal;
+
+    color:darkblue;
+
+    text-shadow:2px 2px 4px gray;
+}
+
+h2{
+    text-align:center;
+    text-decoration:underline;
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<h2>CSS Text Properties</h2>
+
+<p>
+css provides many text properties to control the appearance of text.
+You can change alignment, spacing, capitalization, decoration,
+direction, indentation and even add shadow effects to make text more attractive.
+</p>
+
+</div>
+
+</body>
+</html>
+```
